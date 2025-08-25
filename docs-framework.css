@@ -1,188 +1,88 @@
-/* ===== Trisoft — scoped to the description right after #view-message ===== */
-
-/* Base container */
-#view-message + div{
+/* Scope ONLY to the job description area */
+#description{
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif !important;
   font-size:13px !important; line-height:1.6 !important; color:#333 !important;
 }
 
-/* HERO: H1 + first paragraph */
-#view-message + div > h1:first-child{
+/* HERO: H1 + the paragraph immediately after it */
+#description > h1:first-child{
   margin:0 !important; padding:18px 20px 6px !important;
   font-size:2.4em !important; font-weight:300 !important; color:#fff !important;
   background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
   border-radius:10px 10px 0 0 !important; box-shadow:0 2px 8px rgba(0,0,0,.08) !important;
 }
-#view-message + div > h1:first-child + p{
-  margin:0 0 22px 0 !important; padding:0 20px 16px !important; color:#fff !important;
-  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
-  border-radius:0 0 10px 10px !important; box-shadow:0 2px 8px rgba(0,0,0,.08) !important; opacity:.95 !important;
-}
-
-/* CARDS: every direct <section> becomes a card */
-#view-message + div > section{
-  background:#fff !important; margin:0 0 22px !important; padding:22px !important;
-  border-radius:8px !important; box-shadow:0 2px 10px rgba(0,0,0,.06) !important;
-  border-left:4px solid #667eea !important;
-}
-
-/* Headings inside cards */
-#view-message + div > section > h2{
-  color:#667eea !important; margin:0 0 12px !important; font-size:1.4em !important;
-  border-bottom:2px solid #eee !important; padding-bottom:8px !important; font-weight:500 !important;
-}
-#view-message + div > section h3{ color:#555 !important; margin:18px 0 8px !important; font-size:1.2em !important; font-weight:500 !important; }
-#view-message + div > section p{  margin:8px 0 !important; }
-#view-message + div > section ul{ margin:0 0 0 18px !important; }
-#view-message + div > section li{ margin:4px 0 !important; }
-
-/* Tables (default: purple header) inside any card */
-#view-message + div > section table{
-  width:100% !important; margin-top:12px !important; border-collapse:collapse !important;
-  border:1px solid #dee2e6 !important; background:#fff !important;
-  box-shadow:0 2px 10px rgba(0,0,0,.06) !important; table-layout:fixed !important;
-}
-#view-message + div > section thead tr{
-  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important; color:#fff !important;
-}
-#view-message + div > section th,
-#view-message + div > section td{
-  padding:12px 15px !important; border-bottom:1px solid #dee2e6 !important; vertical-align:top !important;
-}
-#view-message + div > section th{
-  text-align:left !important; font-weight:500 !important; color:#fff !important;
-  border-right:1px solid rgba(255,255,255,.2) !important;
-}
-#view-message + div > section tbody tr:nth-child(odd){ background:#f8f9fa !important; }
-#view-message + div > section tbody tr:nth-child(even){ background:#fff !important; }
-#view-message + div > section tbody td:first-child{
-  font-weight:600 !important; background:#e9ecef !important; border-right:1px solid #dee2e6 !important;
-}
-
-/* Overview chips: the FIRST card’s FIRST table (no thead) */
-#view-message + div > section:first-of-type > table{
-  border:0 !important; border-collapse:separate !important; border-spacing:12px !important;
-  box-shadow:none !important;
-}
-#view-message + div > section:first-of-type > table td{
-  background:#f8f9fa !important; padding:12px !important; border-radius:6px !important;
-  border-left:3px solid #28a745 !important; vertical-align:top !important; border:0 !important;
-}
-#view-message + div > section:first-of-type > table td strong{ color:#28a745 !important; }
-
-/* Env table header green when preceded by your callout */
-#view-message + div > section blockquote + table thead tr{
-  background:linear-gradient(135deg,#28a745 0%,#20c997 100%) !important;
-}
-
-/* Callouts (use <blockquote>) */
-#view-message + div > section blockquote{
-  background:#e8f5e8 !important; color:#2d5016 !important; padding:12px 15px !important;
-  border-radius:6px !important; border-left:4px solid #28a745 !important; margin:12px 0 !important;
-}
-
-/* Code chips */
-#view-message + div code{
-  background:#f1f3f4 !important; border:1px solid #e1e5e9 !important; border-radius:3px !important;
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace !important;
-  font-size:.85em !important; color:#444 !important; padding:2px 4px !important;
-  display:inline-block !important; margin:1px !important; white-space:break-spaces !important; word-break:break-word !important;
-}
-
-/* Optional OS accents */
-#view-message + div td code[data-os="win"]{ background:#e3f2fd !important; color:#0d47a1 !important; border-color:#1976d2 !important; }
-#view-message + div td code[data-os="lin"]{ background:#fff3e0 !important; color:#e65100 !important; border-color:#f57c00 !important; }
-
-/* Trisoft — scope to the description block after #view-message only */
-#view-message ~ div{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif !important;
-  font-size:13px !important; line-height:1.6 !important; color:#333 !important;
-}
-
-/* HERO (H1 + the P right after it) */
-#view-message ~ div > h1:first-child{
-  margin:0 !important; padding:18px 20px 6px !important;
-  font-size:2.4em !important; font-weight:300 !important; color:#fff !important;
-  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
-  border-radius:10px 10px 0 0 !important; box-shadow:0 2px 8px rgba(0,0,0,.08) !important;
-}
-#view-message ~ div > h1:first-child + p{
-  margin:0 0 22px 0 !important; padding:0 20px 16px !important; color:#fff !important;
+#description > h1:first-child + p{
+  margin:0 0 22px !important; padding:0 20px 16px !important; color:#fff !important;
   background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
   border-radius:0 0 10px 10px !important; box-shadow:0 2px 8px rgba(0,0,0,.08) !important;
   opacity:.95 !important;
 }
 
-/* CARDS: every direct child <div> (one per section) */
-#view-message ~ div > div{
+/* CARDS: only direct content sections — exclude Jenkins controls */
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame){
   background:#fff !important; margin:0 0 22px !important; padding:22px !important;
   border-radius:8px !important; box-shadow:0 2px 10px rgba(0,0,0,.06) !important;
   border-left:4px solid #667eea !important;
 }
 
 /* Headings/content inside cards */
-#view-message ~ div > div > h2{
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) > h2{
   color:#667eea !important; margin:0 0 12px !important; font-size:1.4em !important;
   border-bottom:2px solid #eee !important; padding-bottom:8px !important; font-weight:500 !important;
 }
-#view-message ~ div > div h3{ color:#555 !important; margin:18px 0 8px !important; font-size:1.2em !important; font-weight:500 !important; }
-#view-message ~ div > div p{  margin:8px 0 !important; }
-#view-message ~ div > div ul{ margin:0 0 0 18px !important; }
-#view-message ~ div > div li{ margin:4px 0 !important; }
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) h3{ color:#555 !important; margin:18px 0 8px !important; font-size:1.2em !important; font-weight:500 !important; }
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) p{  margin:8px 0 !important; }
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) ul{ margin:0 0 0 18px !important; }
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) li{ margin:4px 0 !important; }
 
-/* Tables (default: purple header) */
-#view-message ~ div > div table{
+/* Tables (purple header by default) inside content cards */
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) table{
   width:100% !important; margin-top:12px !important; border-collapse:collapse !important;
   border:1px solid #dee2e6 !important; background:#fff !important;
   box-shadow:0 2px 10px rgba(0,0,0,.06) !important; table-layout:fixed !important;
 }
-#view-message ~ div > div thead tr{
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) thead tr{
   background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important; color:#fff !important;
 }
-#view-message ~ div > div th,
-#view-message ~ div > div td{
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) th,
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) td{
   padding:12px 15px !important; border-bottom:1px solid #dee2e6 !important; vertical-align:top !important;
 }
-#view-message ~ div > div th{
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame) th{
   text-align:left !important; font-weight:500 !important; color:#fff !important;
   border-right:1px solid rgba(255,255,255,.2) !important;
 }
-#view-message ~ div > div tbody tr:nth-child(odd){ background:#f8f9fa !important; }
-#view-message ~ div > div tbody tr:nth-child(even){ background:#fff !important; }
-#view-message ~ div > div tbody td:first-child{
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame)) tbody tr:nth-child(odd){ background:#f8f9fa !important; }
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame)) tbody tr:nth-child(even){ background:#fff !important; }
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame)) tbody td:first-child{
   font-weight:600 !important; background:#e9ecef !important; border-right:1px solid #dee2e6 !important;
 }
 
-/* Overview “chips”: the FIRST card’s FIRST table */
-#view-message ~ div > div:first-of-type > table{
-  border:0 !important; border-collapse:separate !important; border-spacing:12px !important;
-  box-shadow:none !important;
+/* Overview chips: FIRST content card’s FIRST table (no thead) */
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame)):first-of-type > table{
+  border:0 !important; border-collapse:separate !important; border-spacing:12px !important; box-shadow:none !important;
 }
-#view-message ~ div > div:first-of-type > table td{
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame)):first-of-type > table td{
   background:#f8f9fa !important; padding:12px !important; border-radius:6px !important;
   border-left:3px solid #28a745 !important; vertical-align:top !important; border:0 !important;
 }
-#view-message ~ div > div:first-of-type > table td strong{ color:#28a745 !important; }
+#description > div:not(.jenkins-buttons-row):not(.jenkins-buttons-row--invert):not([align]):not(.tabbarFrame)):first-of-type > table td strong{ color:#28a745 !important; }
 
-/* Env table header turns green when preceded by a callout */
-#view-message ~ div > div blockquote + table thead tr{
+/* Env table header green when preceded by a callout */
+#description blockquote + table thead tr{
   background:linear-gradient(135deg,#28a745 0%,#20c997 100%) !important;
 }
 
-/* Callouts (use <blockquote>) */
-#view-message ~ div > div blockquote{
+/* Callouts + code chips */
+#description blockquote{
   background:#e8f5e8 !important; color:#2d5016 !important; padding:12px 15px !important;
   border-radius:6px !important; border-left:4px solid #28a745 !important; margin:12px 0 !important;
 }
-
-/* Code chips */
-#view-message ~ div code{
+#description code{
   background:#f1f3f4 !important; border:1px solid #e1e5e9 !important; border-radius:3px !important;
   font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace !important;
-  font-size:.85em !important; color:#444 !important; padding:2px 4px !important;
-  display:inline-block !important; margin:1px !important; white-space:break-spaces !important; word-break:break-word !important;
+  font-size:.85em !important; color:#444 !important; padding:2px 4px !important; margin:1px !important;
+  display:inline-block !important; white-space:break-spaces !important; word-break:break-word !important;
 }
-/* Optional OS accents */
-#view-message ~ div td code[data-os="win"]{ background:#e3f2fd !important; color:#0d47a1 !important; border-color:#1976d2 !important; }
-#view-message ~ div td code[data-os="lin"]{ background:#fff3e0 !important; color:#e65100 !important; border-color:#f57c00 !important; }
-
+#description td code[data-os="win"]{ background:#e3f2fd !important; color:#0d47a1 !important; border-color:#1976d2 !important; }
+#description td code[data-os="lin"]{ background:#fff3e0 !important; color:#e65100 !important; border-color:#f57c00 !important; }
