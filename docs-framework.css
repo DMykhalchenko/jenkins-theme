@@ -1,103 +1,87 @@
-/* ===== Trisoft (Safe HTML) — scoped to content right after #view-message ===== */
+/* ===== Trisoft — scoped to the description right after #view-message ===== */
 
-/* Base typography only for the description block immediately after #view-message */
-#view-message + div {
+/* Base container */
+#view-message + div{
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif !important;
-  font-size:13px !important;
-  line-height:1.6 !important;
-  color:#333 !important;
+  font-size:13px !important; line-height:1.6 !important; color:#333 !important;
 }
 
-/* --- HERO made from the first H1 and the paragraph right after it --- */
-#view-message + div h1:first-of-type{
-  display:block !important;
-  margin:0 !important;
-  padding:18px 20px 6px 20px !important;
-  font-size:2.4em !important;
-  font-weight:300 !important;
-  color:#fff !important;
+/* HERO: H1 + first paragraph */
+#view-message + div > h1:first-child{
+  margin:0 !important; padding:18px 20px 6px !important;
+  font-size:2.4em !important; font-weight:300 !important; color:#fff !important;
   background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
-  border-radius:10px 10px 0 0 !important;
-  box-shadow:0 2px 8px rgba(0,0,0,.08) !important;
+  border-radius:10px 10px 0 0 !important; box-shadow:0 2px 8px rgba(0,0,0,.08) !important;
 }
-#view-message + div h1:first-of-type + p{
-  display:block !important;
-  margin:0 0 22px 0 !important;
-  padding:0 20px 16px 20px !important;
-  color:#fff !important;
+#view-message + div > h1:first-child + p{
+  margin:0 0 22px 0 !important; padding:0 20px 16px !important; color:#fff !important;
   background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
-  border-radius:0 0 10px 10px !important;
-  box-shadow:0 2px 8px rgba(0,0,0,.08) !important;
-  opacity:.95 !important;
+  border-radius:0 0 10px 10px !important; box-shadow:0 2px 8px rgba(0,0,0,.08) !important; opacity:.95 !important;
 }
 
-/* --- Cards: any descendant block that has an H2 (but not the hero) --- */
-#view-message + div :is(div,section):has(> h2){
-  background:#fff !important;
-  margin:0 0 22px !important;
-  padding:22px !important;
-  border-radius:8px !important;
-  box-shadow:0 2px 10px rgba(0,0,0,.06) !important;
+/* CARDS: every direct <section> becomes a card */
+#view-message + div > section{
+  background:#fff !important; margin:0 0 22px !important; padding:22px !important;
+  border-radius:8px !important; box-shadow:0 2px 10px rgba(0,0,0,.06) !important;
   border-left:4px solid #667eea !important;
 }
-#view-message + div h2{
-  color:#667eea !important;
-  margin:0 0 12px !important;
-  font-size:1.4em !important;
-  border-bottom:2px solid #eee !important;
-  padding-bottom:8px !important;
-  font-weight:500 !important;
-}
-#view-message + div h3{ color:#555 !important; margin:18px 0 8px !important; font-size:1.2em !important; font-weight:500 !important; }
-#view-message + div p{  margin:8px 0 !important; }
-#view-message + div ul{ margin:0 0 0 18px !important; }
-#view-message + div li{ margin:4px 0 !important; }
 
-/* Info chips row = first table WITHOUT thead after the first H2 */
-#view-message + div h2:first-of-type ~ table:first-of-type:not(:has(thead)){
-  width:100% !important; border-collapse:separate !important; border-spacing:12px !important;
+/* Headings inside cards */
+#view-message + div > section > h2{
+  color:#667eea !important; margin:0 0 12px !important; font-size:1.4em !important;
+  border-bottom:2px solid #eee !important; padding-bottom:8px !important; font-weight:500 !important;
 }
-#view-message + div h2:first-of-type ~ table:first-of-type:not(:has(thead)) td{
-  background:#f8f9fa !important; padding:12px !important; border-radius:6px !important;
-  border-left:3px solid #28a745 !important; vertical-align:top !important;
-}
-#view-message + div h2:first-of-type ~ table:first-of-type:not(:has(thead)) td strong{ color:#28a745 !important; }
+#view-message + div > section h3{ color:#555 !important; margin:18px 0 8px !important; font-size:1.2em !important; font-weight:500 !important; }
+#view-message + div > section p{  margin:8px 0 !important; }
+#view-message + div > section ul{ margin:0 0 0 18px !important; }
+#view-message + div > section li{ margin:4px 0 !important; }
 
-/* Tables with THEAD (purple header by default) */
-#view-message + div table:has(thead){
+/* Tables (default: purple header) inside any card */
+#view-message + div > section table{
   width:100% !important; margin-top:12px !important; border-collapse:collapse !important;
   border:1px solid #dee2e6 !important; background:#fff !important;
   box-shadow:0 2px 10px rgba(0,0,0,.06) !important; table-layout:fixed !important;
 }
-#view-message + div table:has(thead) thead tr{
+#view-message + div > section thead tr{
   background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important; color:#fff !important;
 }
-#view-message + div table:has(thead) th,
-#view-message + div table:has(thead) td{
+#view-message + div > section th,
+#view-message + div > section td{
   padding:12px 15px !important; border-bottom:1px solid #dee2e6 !important; vertical-align:top !important;
 }
-#view-message + div table:has(thead) th{
+#view-message + div > section th{
   text-align:left !important; font-weight:500 !important; color:#fff !important;
   border-right:1px solid rgba(255,255,255,.2) !important;
 }
-#view-message + div table:has(thead) tbody tr:nth-child(odd){ background:#f8f9fa !important; }
-#view-message + div table:has(thead) tbody tr:nth-child(even){ background:#fff !important; }
-#view-message + div table:has(thead) tbody td:first-child{
+#view-message + div > section tbody tr:nth-child(odd){ background:#f8f9fa !important; }
+#view-message + div > section tbody tr:nth-child(even){ background:#fff !important; }
+#view-message + div > section tbody td:first-child{
   font-weight:600 !important; background:#e9ecef !important; border-right:1px solid #dee2e6 !important;
 }
 
-/* Env table header turns green when preceded by our callout */
-#view-message + div blockquote + table thead tr{
+/* Overview chips: the FIRST card’s FIRST table (no thead) */
+#view-message + div > section:first-of-type > table{
+  border:0 !important; border-collapse:separate !important; border-spacing:12px !important;
+  box-shadow:none !important;
+}
+#view-message + div > section:first-of-type > table td{
+  background:#f8f9fa !important; padding:12px !important; border-radius:6px !important;
+  border-left:3px solid #28a745 !important; vertical-align:top !important; border:0 !important;
+}
+#view-message + div > section:first-of-type > table td strong{ color:#28a745 !important; }
+
+/* Env table header green when preceded by your callout */
+#view-message + div > section blockquote + table thead tr{
   background:linear-gradient(135deg,#28a745 0%,#20c997 100%) !important;
 }
 
 /* Callouts (use <blockquote>) */
-#view-message + div blockquote{
+#view-message + div > section blockquote{
   background:#e8f5e8 !important; color:#2d5016 !important; padding:12px 15px !important;
   border-radius:6px !important; border-left:4px solid #28a745 !important; margin:12px 0 !important;
 }
 
-/* Code tokens */
+/* Code chips */
 #view-message + div code{
   background:#f1f3f4 !important; border:1px solid #e1e5e9 !important; border-radius:3px !important;
   font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace !important;
