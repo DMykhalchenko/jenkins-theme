@@ -6,7 +6,7 @@
 body, p, table, tr, th, td, strong, h1, h2, h3, h4, h5, h6, blockquote, li {
    font-family: Roboto, sans-serif !important;
 }
-
+#description .trisoft-container { border: 2px dashed #764ba2 !important; }
 /* Trisoft Container - Force background override */
 #description .trisoft-container {
     font-family: Roboto, sans-serif !important;
