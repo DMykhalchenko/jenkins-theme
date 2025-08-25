@@ -1,83 +1,83 @@
-/* ===== Trisoft — scoped to article wrapper only ===== */
+/* ===== Trisoft — scoped to the job description after #view-message ===== */
 
-#main-panel article[data-trisoft],
-#main-panel article.trisoft,              /* fallback if you switch to class later */
-#main-panel article[title="trisoft"],     /* fallback if id/class are stripped */
-#main-panel article                       /* LAST fallback: only if you know <article> is used nowhere else */
-{
+/* Base scope (prefer data-trisoft; fall back to plain <article>) */
+#view-message ~ * article[data-trisoft],
+#view-message ~ * article.trisoft,
+#view-message ~ * article[title="trisoft"],
+#view-message ~ * article {
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif !important;
   font-size:13px !important; line-height:1.6 !important; color:#333 !important;
 }
 
-/* HERO: the first child that has an H1 */
-#main-panel article[data-trisoft] > *:has(> h1),
-#main-panel article > *:has(> h1){
+/* HERO: any direct child that contains an H1 */
+#view-message ~ * article[data-trisoft] > *:has(> h1),
+#view-message ~ * article > *:has(> h1){
   background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
   color:#fff !important; padding:30px !important; border-radius:10px !important;
   margin:0 0 30px !important; text-align:center !important;
   box-shadow:0 2px 8px rgba(0,0,0,.08) !important;
 }
-#main-panel article h1{ margin:0 !important; font-size:2.4em !important; font-weight:300 !important; }
-#main-panel article h1 + p{ margin:10px 0 0 !important; opacity:.92 !important; font-size:1.08em !important; }
+#view-message ~ * article h1{ margin:0 !important; font-size:2.4em !important; font-weight:300 !important; }
+#view-message ~ * article h1 + p{ margin:10px 0 0 !important; opacity:.92 !important; font-size:1.08em !important; }
 
 /* CARDS: any direct child with an H2 (but not the hero) */
-#main-panel article > *:has(> h2):not(:has(> h1)){
+#view-message ~ * article > *:has(> h2):not(:has(> h1)){
   background:#fff !important; margin:0 0 22px !important; padding:22px !important;
   border-radius:8px !important; box-shadow:0 2px 10px rgba(0,0,0,.06) !important;
   border-left:4px solid #667eea !important;
 }
-#main-panel article h2{
+#view-message ~ * article h2{
   color:#667eea !important; margin:0 0 12px !important; font-size:1.4em !important;
   border-bottom:2px solid #eee !important; padding-bottom:8px !important; font-weight:500 !important;
 }
-#main-panel article h3{ color:#555 !important; margin:18px 0 8px !important; font-size:1.2em !important; font-weight:500 !important; }
-#main-panel article p{ margin:8px 0 !important; }
-#main-panel article ul{ margin:0 0 0 18px !important; }
-#main-panel article li{ margin:4px 0 !important; }
+#view-message ~ * article h3{ color:#555 !important; margin:18px 0 8px !important; font-size:1.2em !important; font-weight:500 !important; }
+#view-message ~ * article p{ margin:8px 0 !important; }
+#view-message ~ * article ul{ margin:0 0 0 18px !important; }
+#view-message ~ * article li{ margin:4px 0 !important; }
 
 /* INFO CHIPS: the first table after the first H2 in the wrapper */
-#main-panel article h2:first-of-type ~ table:first-of-type{
+#view-message ~ * article h2:first-of-type ~ table:first-of-type{
   width:100% !important; border-collapse:separate !important; border-spacing:12px !important;
 }
-#main-panel article h2:first-of-type ~ table:first-of-type td{
+#view-message ~ * article h2:first-of-type ~ table:first-of-type td{
   background:#f8f9fa !important; padding:12px !important; border-radius:6px !important;
   border-left:3px solid #28a745 !important; vertical-align:top !important;
 }
-#main-panel article h2:first-of-type ~ table:first-of-type td strong{ color:#28a745 !important; }
+#view-message ~ * article h2:first-of-type ~ table:first-of-type td strong{ color:#28a745 !important; }
 
 /* Tables (only inside the wrapper) — purple header by default */
-#main-panel article table{
+#view-message ~ * article table{
   width:100% !important; margin-top:12px !important; border-collapse:collapse !important;
   border:1px solid #dee2e6 !important; background:#fff !important;
   box-shadow:0 2px 10px rgba(0,0,0,.06) !important; table-layout:fixed !important;
 }
-#main-panel article thead tr{ background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important; color:#fff !important; }
-#main-panel article th, #main-panel article td{
+#view-message ~ * article thead tr{ background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important; color:#fff !important; }
+#view-message ~ * article th, #view-message ~ * article td{
   padding:12px 15px !important; border-bottom:1px solid #dee2e6 !important; vertical-align:top !important;
 }
-#main-panel article th{
+#view-message ~ * article th{
   text-align:left !important; font-weight:500 !important; color:#fff !important;
   border-right:1px solid rgba(255,255,255,.2) !important;
 }
-#main-panel article tbody tr:nth-child(odd){ background:#f8f9fa !important; }
-#main-panel article tbody tr:nth-child(even){ background:#fff !important; }
-#main-panel article tbody td:first-child{
+#view-message ~ * article tbody tr:nth-child(odd){ background:#f8f9fa !important; }
+#view-message ~ * article tbody tr:nth-child(even){ background:#fff !important; }
+#view-message ~ * article tbody td:first-child{
   font-weight:600 !important; background:#e9ecef !important; border-right:1px solid #dee2e6 !important;
 }
 
-/* Environment table header green: the THEAD immediately after a callout */
-#main-panel article blockquote + table thead tr{
+/* Environment table header green: THEAD immediately after a callout */
+#view-message ~ * article blockquote + table thead tr{
   background:linear-gradient(135deg,#28a745 0%,#20c997 100%) !important;
 }
 
 /* Callouts */
-#main-panel article blockquote{
+#view-message ~ * article blockquote{
   background:#e8f5e8 !important; color:#2d5016 !important; padding:12px 15px !important;
   border-radius:6px !important; border-left:4px solid #28a745 !important; margin:12px 0 !important;
 }
 
-/* Code chips only inside the wrapper */
-#main-panel article code{
+/* Code chips */
+#view-message ~ * article code{
   background:#f1f3f4 !important; border:1px solid #e1e5e9 !important; border-radius:3px !important;
   font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace !important;
   font-size:.85em !important; color:#444 !important; padding:2px 4px !important;
@@ -85,5 +85,5 @@
 }
 
 /* Optional OS accents */
-#main-panel article td code[data-os="win"]{ background:#e3f2fd !important; color:#0d47a1 !important; border-color:#1976d2 !important; }
-#main-panel article td code[data-os="lin"]{ background:#fff3e0 !important; color:#e65100 !important; border-color:#f57c00 !important; }
+#view-message ~ * article td code[data-os="win"]{ background:#e3f2fd !important; color:#0d47a1 !important; border-color:#1976d2 !important; }
+#view-message ~ * article td code[data-os="lin"]{ background:#fff3e0 !important; color:#e65100 !important; border-color:#f57c00 !important; }
